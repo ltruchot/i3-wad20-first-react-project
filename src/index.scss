@@ -1,0 +1,46 @@
+@import "tailwindcss/dist/tailwind.min.css";
+
+.bg-aquamarine {
+  background-color: aquamarine;
+}
+
+// 1- lors du survol de n'importequel element, il devient bg noir, text blanc, en 2 seconds
+// 2- lors du survol, le nom complet de l'élement apparaît en douceur (opacity), en 2s
+a {
+  display: block;
+  color: lightgray;
+  transition: all 5s linear;
+  span {
+    transition: opacity 5s;
+    opacity: 0;
+  }
+  &:hover {
+    color: black;
+    span {
+      opacity: 1;
+    }
+  }
+}
+
+// crazy
+a {
+  position: relative;
+  display: inline-block;
+  color: royalblue;
+  overflow: hidden;
+  background: linear-gradient(
+    to right,
+    midnightblue,
+    midnightblue 50%,
+    royalblue 50%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  background-position: 100%;
+  transition: background-position 0.75s ease;
+}
+a:hover {
+  background-position: 0 100%;
+}
